@@ -12,7 +12,7 @@ class CloudFirestore implements AbstractCloudFirestore {
       await photoCollection.add(photoMetadata.toJson());
 
   @override
-  Stream<QuerySnapshot<Object?>>? getPhotoMetadataCollection() async* {
+  Stream<QuerySnapshot<Object?>> getPhotoMetadataCollection() async* {
     yield* photoCollection.snapshots();
   }
 }

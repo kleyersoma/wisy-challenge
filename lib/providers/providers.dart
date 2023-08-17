@@ -47,7 +47,7 @@ final cloudFirestoreProviderMetadataList =
     StreamProvider<List<PhotoMetadata>>((ref) async* {
   final streamPhotoMetadataCollection = ref
       .read(cloudFirestoreProvider)
-      .getPhotoMetadataCollection()!
+      .getPhotoMetadataCollection()
       .map((event) => event.docs
           .map((e) => PhotoMetadata.fromJson(e.data() as Map<String, dynamic>))
           .toList());
